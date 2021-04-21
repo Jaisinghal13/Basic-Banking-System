@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <br>
+    <h3>Customers</h3>
+    <br>
+    <div class="table-responsive ">
+    <table class="table table-light table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Email</th>
+                <th>Balance (<span>&#8377;</span>)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let customer of customers">
+            <tr>
+                <td>{{customer.customerid}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td><span>&#8377;</span> {{customer.balance}}</td>
+                <!--<td>{{customer.category | uppercase}}</td>-->
+                <td>
+                    <div class="d-grid">
+                        <button class="btn btn-info" [routerLink]="[  '/transfer', this.customer.id  ]">Transfer</button>
+                    </div>
+                    <!-- <a class="mx-2" style="color: black;" [routerLink]="[ '/transfer', this.customer.id ]"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <br>
+    <h3>Previous Transaction Details</h3>
+    <br>
+    <div class="table-responsive">    
+        <table class="table table-info table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Sender ID</th>
+                <th>Sender Name</th>
+                <!-- <th>Sender Email</th> -->
+                <th>Receiver ID</th>
+                <th>Receiver Name</th>
+                <!-- <th>Receiver Email</th> -->
+                <th>Amount Transfer (<span>&#8377;</span>)</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let transfer of transfers">
+            <tr>
+                <td>{{transfer.senderCustomerid}}</td>
+                <td>{{transfer.sendername}}</td>
+                <!-- <td>{{transfer.senderemail}}</td> -->
+                <td>{{transfer.recepientCustomerid}}</td>
+                <td>{{transfer.recepientname}}</td>
+                <!-- <td>{{transfer.recepientemail}}</td> -->
+                <td><span>&#8377;</span> {{transfer.amountTransfer}}</td>
+                <td>{{transfer.timestamp.toDate() | date :'medium' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
